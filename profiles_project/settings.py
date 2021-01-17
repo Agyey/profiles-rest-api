@@ -45,9 +45,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django_otp',
     'django_otp.plugins.otp_totp',
-    'djangosecure',
+    # 'djangosecure',
     'request',
-    'sslserver',
     'profiles_api',
 ]
 
@@ -64,9 +63,9 @@ MIDDLEWARE = [
     'django_otp.middleware.OTPMiddleware',
 ]
 
-MIDDLEWARE_CLASSES = (
-    'djangosecure.middleware.SecurityMiddleware',
-)
+# MIDDLEWARE_CLASSES = (
+#     'djangosecure.middleware.SecurityMiddleware',
+# )
 
 ROOT_URLCONF = 'profiles_project.urls'
 
@@ -209,7 +208,3 @@ LOGGING = {
         }
     },
 }
-
-
-# Security Settings
-SECURE_SSL_REDIRECT = True
