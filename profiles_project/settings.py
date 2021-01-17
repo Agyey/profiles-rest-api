@@ -43,9 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'django_otp',
-    'django_otp.plugins.otp_totp',
-    # 'djangosecure',
     'request',
     'profiles_api',
 ]
@@ -58,14 +55,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'request.middleware.RequestMiddleware',
-    'profiles_api.middleware.RequestLogMiddleware',
-    'django_otp.middleware.OTPMiddleware',
+    # 'request.middleware.RequestMiddleware',
+    # 'profiles_api.middleware.RequestLogMiddleware',
 ]
 
-# MIDDLEWARE_CLASSES = (
-#     'djangosecure.middleware.SecurityMiddleware',
-# )
 
 ROOT_URLCONF = 'profiles_project.urls'
 
