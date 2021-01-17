@@ -146,6 +146,8 @@ AUTH_USER_MODEL = "profiles_api.UserProfile"
 # Logging
 
 LOG_PATH = Path(BASE_DIR) / "log"
+if not os.path.isdir(LOG_PATH):
+    os.mkdir(LOG_PATH)
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
