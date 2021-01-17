@@ -38,13 +38,6 @@ class RequestLogMiddleware(MiddlewareMixin):
             'request_path': request.get_full_path(),
             'run_time': time.time() - request.start_time,
         }
-        if request.method in ['PUT', 'POST', 'PATCH']:
-            log_data['request_body'] = json.loads(
-                str(request.req_body, 'utf-8'))
-            if response:
-                if response['content-type'] == 'application/json':
-                    response_body = response.content
-                    log_data['response_body'] = response_body
         return log_data
 
     def process_response(self, request, response):

@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'django_otp',
+    'django_otp.plugins.otp_totp',
+    'djangosecure',
     'request',
+    'sslserver',
     'profiles_api',
 ]
 
@@ -53,7 +57,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'request.middleware.RequestMiddleware',
     'profiles_api.middleware.RequestLogMiddleware',
+    'django_otp.middleware.OTPMiddleware',
 ]
+
+MIDDLEWARE_CLASSES = (
+    'djangosecure.middleware.SecurityMiddleware',
+)
 
 ROOT_URLCONF = 'profiles_project.urls'
 
@@ -192,3 +201,7 @@ LOGGING = {
         }
     },
 }
+
+
+# Security Settings
+SECURE_SSL_REDIRECT = True
